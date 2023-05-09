@@ -167,6 +167,11 @@ html,body {
     top: 50%;
 }
 
+.underline {
+    background-color: var(--off-screen-background-color);
+    height: 10px;
+}
+
 @media screen and (max-width: 767px) {
   
 }

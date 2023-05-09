@@ -21,6 +21,10 @@ html,body {
 }
 
 /* nav Style */
+.template-logo {
+    max-height: 45px;
+}
+
 .navbar {
     background-color: rgba(0, 0, 0, 0.1);
     position: fixed;

@@ -18,13 +18,13 @@
 
 html,body {
     overflow-x: hidden;
+    font-family: var(--template-font);
 }
 
 /* custom classes */
 .template-font-style,
 .letter-spacing,
 .dark-background {
-    font-family: var(--template-font);
     letter-spacing: 1px;
     background: black;
 }
@@ -183,6 +183,15 @@ html,body {
     color: white;
 }
 /* end style */
+.client-img img {
+    max-width: 150px;
+    transition: all 0.2s;
+}
+
+.client-img img:hover {
+    transform: scale(1.1);
+}
+/* end client */
 
 /* media queries */
 @media screen and (max-width: 767px) { 

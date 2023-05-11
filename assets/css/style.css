@@ -22,13 +22,20 @@ html,body {
 
 /* custom classes */
 .template-font-style,
-.letter-spacing {
+.letter-spacing,
+.dark-background {
     font-family: var(--template-font);
     letter-spacing: 1px;
+    background: black;
 }
-/* end */
 
-/* nav Style */
+.underline {
+    background-color: var(--off-screen-background-color);
+    height: 10px;
+}
+/* end custom classes */
+
+/* navbar Style */
 .template-logo {
     max-height: 45px;
 }
@@ -49,6 +56,7 @@ html,body {
     background-color: var(--nav-toggle-illuminnated);
     opacity: 0.5;
 }
+/* end navbar */
 
 /* template banner Style */
 .template-banner {
@@ -70,16 +78,11 @@ html,body {
 }
 
 .read-btn {
-    text-decoration: none;
     color: var(--button-text-color);
-    text-transform: uppercase;
-    font-size: small;
     max-width: 221px;
     height: 42px;
     border: 2px solid var(--button-border-color);
     transition: all ease .5s;
-    cursor: pointer;
-    align-items: center;
 }
 
 .read-btn span {
@@ -88,8 +91,6 @@ html,body {
 }
 
 .read-btn i {
-    color: rgb(255, 255, 255);
-    font-size: 16px;
     opacity: 0;
 }
 
@@ -149,11 +150,41 @@ html,body {
     top: 50%;
 }
 
-.underline {
-    background-color: var(--off-screen-background-color);
-    height: 10px;
+/* vertical tabs implementation */
+#v-pills-tab {
+    border-left: 1px solid rgba(211, 211, 211, 0.313);
 }
 
-@media screen and (max-width: 767px) {
+#v-pills-tab a {
+    color: gray;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+}
+
+#v-pills-tab a:nth-child(4) {
+    margin-bottom: 0!important;
+}
+
+#v-pills-tab a span {
+    padding-left: 55px;
+}
+
+#v-pills-tab a:hover {
+    color: white;
+}
+
+#v-pills-tab .nav-link {
+    border-left: 2px solid transparent;
+    transition: all 0.7s;
+}
+
+#v-pills-tab .nav-link.active {
+    border-left-color: var(--button-border-color);
+    color: white;
+}
+/* end style */
+
+/* media queries */
+@media screen and (max-width: 767px) { 
   
 }

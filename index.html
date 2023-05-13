@@ -278,6 +278,66 @@
     </div>
     <!-- end -->
 
+    <!-- template contact info -->
+    <div class="container py-5" id="contact">
+        <h2 class="text-center pt-5">Let's Work Together</h2>
+        <p class="text-center">You can reach us on our <strong>contact info</strong> below</p>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div
+                    class="boxes bg-light d-flex align-items-center justify-content-center flex-column shadow p-3 mb-5 bg-body rounded h-75">
+                    <p class="m-0"><i class="fa fa-phone"></i> <a href="tel:+1 (647) 833-9312"
+                            class="text-decoration-none">+1 (647) 833-9312</a></p>
+                    <p class="m-0"><i class="fa fa-phone"></i> <a href="tel:+49 15259820131"
+                            class="text-decoration-none">+49 15259820131</a></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div
+                    class="boxes bg-light d-flex align-items-center justify-content-center flex-column shadow p-3 mb-5 bg-body rounded h-75">
+                    <p class="m-0"><i class="fa fa-envelope"></i> <a href="mailto: bit_it_solutions@hotmail.com"
+                            class="text-decoration-none">bit_it_solutions@hotmail.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <form id="contact-form" class="contact-form p-4" action="submit.php" method="post">
+                    <h2 class="text-center">Contact</h2>
+                    <p class="text-center mb-4">Fill out this form and we will <strong>get back to you asap!</strong>
+                    </p>
+                    <div id="email_div" class="alert alert-success alert-dismissible" role="alert">
+                        <strong>Email sent successfully!</strong> We will reach out to you shortly!
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Enter name here..." name="name"
+                            class="form-control rounded-0 text-secondary mb-3 border border-dark" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter email here..." name="email"
+                            class="form-control rounded-0 text-secondary mb-3 border border-dark" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Enter phone number here..." name="phone_number"
+                            class="form-control rounded-0 text-secondary mb-3 border border-dark" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Enter subject here..." name="subject"
+                            class="form-control rounded-0 text-secondary mb-3 border border-dark" required />
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" placeholder="Enter message here..." name="message"
+                            class="form-control rounded-0 text-secondary mb-3 border border-dark" required></textarea>
+                    </div>
+                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                    <input type="hidden" name="action" value="validate_captcha">
+                    <button type="submit" value="submit" class="btn btn-success btn-submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

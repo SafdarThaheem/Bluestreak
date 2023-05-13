@@ -38,3 +38,39 @@ $('.owl-carousel').owlCarousel({
         }
     }
 });
+
+// contact form 
+$(document).ready(function() {
+    $('.alert').hide();
+    
+     $('#contact-form').submit(function(event) {
+ 
+       event.preventDefault(); // prevent default form submission
+       
+         grecaptcha.ready(function() {
+             
+             grecaptcha.execute('6Lc8-qglAAAAACvrsmOCgbpCncek9B_yO4UJKMuC', {action:'validate_captcha'})
+                   .then(function(token) {
+                     // add token value to form
+                     document.getElementById('g-recaptcha-response').value = token;
+                     var formData = $("#contact-form").serialize(); // get form data
+                     $.ajax({
+                     type: 'POST',
+                     url: $("#contact-form").attr('action'),
+                     data: formData,
+                     success: function(response) {
+                       if( response.code == 200) {
+                         $('#contact-form').get(0).reset();
+                         $(".alert").show().delay(50000).fadeOut();
+                          $('html, body').animate({
+                             scrollTop: $("#email_div").offset().top  - 200
+                         }, 500);
+                       } else {
+                         alert("Something went wrong");
+                       }
+                     }
+                 });
+             });
+         });
+     });
+   });

@@ -2,15 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 :root {
-    --dark-color:black; 
+    --dark-color: black;
     --light-color: white;
+    --light-gray-color: rgb(85, 85, 85);
     --template-font: 'Work Sans', sans-serif;
     --permanent-marker-font: 'Permanent Marker', cursive;
     --nav-toggle-illuminnated: #444444;
     --off-screen-background-color: #22b4ab;
-    --button-text-color:rgb(39, 204, 192);
+    --button-text-color: rgb(39, 204, 192);
     --button-border-color: rgba(39, 204, 192, 0.75);
-    --gradient-color: linear-gradient(to right,#27ccc0 0,#27ccc0 100%);
+    --gradient-color: linear-gradient(to top, #0dc7ba 0, #27ccc0 100%);
 }
 
 * {
@@ -19,9 +20,11 @@
     box-sizing: border-box;
 }
 
-html,body {
+html,
+body {
     overflow-x: hidden;
     font-family: var(--template-font);
+    scroll-behavior: smooth;
 }
 
 /* custom classes */
@@ -36,7 +39,6 @@ html,body {
     background-color: var(--off-screen-background-color);
     height: 10px;
 }
-/* end custom classes */
 
 /* navbar Style */
 .template-logo {
@@ -45,6 +47,7 @@ html,body {
 
 .navbar {
     height: 130px;
+    z-index: 99;
     transition: height cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
 }
 
@@ -58,7 +61,6 @@ html,body {
     background-color: var(--nav-toggle-illuminnated);
     opacity: 0.5;
 }
-/* end navbar */
 
 /* template banner Style */
 .template-banner {
@@ -89,7 +91,7 @@ html,body {
 
 .read-btn span {
     transform: translateX(0);
-    transition: opacity .45s cubic-bezier(.25,1,.33,1),transform .45s cubic-bezier(.25,1,.33,1);
+    transition: opacity .45s cubic-bezier(.25, 1, .33, 1), transform .45s cubic-bezier(.25, 1, .33, 1);
 }
 
 .read-btn i {
@@ -99,11 +101,11 @@ html,body {
 .read-btn:hover {
     color: var(--light-color);
     background-color: var(--off-screen-background-color);
-    opacity: 1!important;
+    opacity: 1 !important;
 }
 
 .read-btn:hover i {
-    opacity: 1!important;
+    opacity: 1 !important;
 }
 
 .read-btn:hover span {
@@ -152,36 +154,59 @@ html,body {
     top: 50%;
 }
 
+/* about */
+.template-about {
+    padding: 100px 0;
+}
+
 /* vertical tabs implementation */
-.pills-tabs {
-    border-left: 1px solid rgba(211, 211, 211, 0.313);
+.tabs-section {
+    padding: 100px 0;
 }
 
-.pills-tabs a {
-    color: gray;
-    border-left: 2px solid transparent;
+.tabs {
+    float: left;
+    width: 30%;
+    border-left: 1px solid var(--light-gray-color);
+    list-style-type: none;
 }
 
-.pills-tabs a span {
-    padding-left: 55px;
+.tabs li {
+    margin-bottom: 10px;
 }
 
-.pills-tabs a:hover {
+#vertical_tab_nav li a {
+    display: block;
+    color: var(--light-gray-color);
+    padding: 10px;
+    padding-left: 30px;
+    border-left: 3px solid transparent;
+}
+
+#vertical_tab_nav li a.selected {
+    border-left: 3px solid var(--button-border-color);
     color: var(--light-color);
 }
 
-.pills-tabs .nav-link {
-    border-left: 2px solid transparent;
-    transition: all 0.7s;
+.tab_container {
+    width: 80%;
 }
 
-.pills-tabs .nav-link.active {
-    border-left-color: var(--button-border-color);
+#vertical_tab_nav div article {
+    display: none;
+    margin: 0px;
     color: var(--light-color);
+    padding: 10px 3% 3% 3%;
 }
-/* end style */
+
+#vertical_tab_nav div article p {
+    margin: 0px 0px 20px 0px;
+}
 
 /* client style */
+.client-section {
+    padding: 100px 0;
+}
 .client-img img {
     max-width: 150px;
     transition: all 0.2s;
@@ -190,9 +215,11 @@ html,body {
 .client-img img:hover {
     transform: scale(1.1);
 }
-/* end client */
 
 /* awards style */
+.awards {
+    padding: 100px 0;
+}
 .double-quotes {
     font-size: 110px;
     color: var(--button-text-color);
@@ -201,9 +228,12 @@ html,body {
 .award-auther {
     font-family: var(--permanent-marker-font);
 }
-/* end awards */
 
 /* contact info style */
+.contact-info {
+    padding: 100px 0;
+}
+
 .contact-form .form-group input,
 .contact-form .form-group textarea {
     height: 50px;
@@ -229,9 +259,83 @@ html,body {
 .contact-form .form-group textarea {
     height: 150px
 }
-/* end contact */
 
-/* media queries */
-@media screen and (max-width: 767px) { 
-  
+/* off screen menu style */
+.off-screen {
+    top: 90px;
+    right: 5%;
+    width: 200px;
+    z-index: 100;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.off-screen.active {
+    max-height: 400px;
+}
+
+.list-group .list-group-item:hover {
+    background-color: var(--off-screen-background-color);
+}
+
+/* media queried */
+@media screen and (max-width: 781px) {
+    .tab_container {
+        display: block;
+        margin: 0 auto;
+        width: 95%;
+        box-shadow: 0px 0px 10px var(--dark-color);
+    }
+
+    .template-about {
+        padding: 30px 0;
+    }
+
+    .tabs-section {
+        padding: 30px 0;
+    }
+
+    .client-section {
+        padding: 30px 5px;
+    }
+
+    .awards {
+        padding: 30px 0;
+    }
+
+    .contact-info {
+        padding: 30px 5px;
+    }
+}
+
+.tabs {
+    display: none;
+}
+
+/* style accordion links */
+.tab_drawer_heading {
+    margin-bottom: 2px;
+    font-size: 14pt;
+    color: var(--light-color);
+    text-decoration: none;
+    padding: 3%;
+    background: var(--gradient-color);
+}
+
+@media screen and (min-width: 480px) {
+    .tab_container {
+        float: left;
+        /* padding: 10px 3% 3% 3%; */
+        border-radius: 0 10px 10px 0;
+        width: 64%;
+    }
+
+    .tabs {
+        display: block;
+    }
+
+    .tab_drawer_heading {
+        display: none;
+    }
 }
